@@ -154,6 +154,5 @@ STATICFILES_DIRS = [
 # Белый шум будет искать файлы в STATIC_ROOT
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'JenyaDevelop.pythonanywhere.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'jenyadevelop.pythonanywhere.com']
 
