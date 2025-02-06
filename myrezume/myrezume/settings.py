@@ -50,6 +50,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     
+    'https://jenyadevelop.pythonanywhere.com',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'http://rezume-front.vercel.app',# Адрес React-Versel
