@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-$pcfld0h(!knue!gh3pqc@1n66@1t)vbhr=+4-au348um5ei9=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -153,4 +153,6 @@ STATICFILES_DIRS = [
 # Белый шум будет искать файлы в STATIC_ROOT
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = ['your-username.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'JenyaDevelop.pythonanywhere.com']
+
+
