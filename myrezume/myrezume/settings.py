@@ -50,6 +50,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     
+    'https://rezume-front.vercel.app'# Адрес React-Versel
     'http://127.0.0.1:8001',
     'http://localhost:3000',  # Адрес React-приложения
 ]
