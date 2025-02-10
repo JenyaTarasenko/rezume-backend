@@ -1,4 +1,6 @@
-
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 from pathlib import Path
 
@@ -28,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'cloudinary',
+    'cloudinary_storage',
     
     'corsheaders',#server для django react
     'api.apps.ApiConfig', #app
@@ -40,7 +44,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     
-     'corsheaders.middleware.CorsMiddleware',#server для django react перед CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware',#server для django react перед CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -144,8 +148,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Медиафайлы
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
@@ -157,5 +161,21 @@ STATICFILES_DIRS = [
 # Белый шум будет искать файлы в STATIC_ROOT
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'jenyadevelop.pythonanywhere.com','rezume-front.vercel.app']
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'jenyadevelop.pythonanywhere.com','rezume-front.vercel.app']
 
+CORS_ORIGIN_ALLOW_ALL = True 
+
+# Настройки для Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'diolxlx1v',
+    'API_KEY': '941291929461692',
+    'API_SECRET': 'hUCy8anjLCBGjH83SPVbgCOSYsA',
+}
+
+# Настройка хранения медиафайлов через Cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# URL для медиафайлов
+# MEDIA_URL = 'CLOUDINARY_URL=cloudinary://<197551772145565>:<wuXhPAEpjXDlcTB8jhUVkSACou4>@diolxlx1v'
+MEDIA_URL = 'https://res.cloudinary.com/diolxlx1v/'
+# MEDIA_URL = 'https://res.cloudinary.com/<CLOUD_NAME>/'
